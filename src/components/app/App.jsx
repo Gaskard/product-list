@@ -1,9 +1,15 @@
 import Header from '../header/Header.jsx'
+import ProductList from '../productList/ProductList.jsx'
+import NewProductForm from '../newProductForm/NewProductForm.jsx'
 
 
-function App() {
+const App = () => {
   return (
-    <Header/>
+    <div className="app">
+      <Header/>
+      <NewProductForm />
+      <ProductList/>
+    </div>
   )
 }
 

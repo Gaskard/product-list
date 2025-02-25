@@ -1,7 +1,7 @@
 import './header.scss'
 import { CirclePlus } from 'lucide-react';
 
-function Header() {
+const Header = () => {
 	return (
 		<>
 			<div className="container">
