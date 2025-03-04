@@ -1,15 +1,28 @@
-
+import './productList.scss'
 
 
 const ProductList = () => {
 	
 	
 	
-	
 	return (
 		<>
-			<h2 className="product__header-good">Хорошие товары</h2>
-			<h2 className="product__header-bad">Плохие товары</h2>
+			<div className="product">
+				<h2 className="product__title-good">Хорошие товары</h2>
+				<div className="product__list">
+					<div>товар</div>
+					<div>товар</div>
+					<div>товар</div>
+				</div>
+			</div>
+			<div className="product">
+				<h2 className="product__title-bad">Плохие товары</h2>
+				<div className="product__list">
+					<div>товар</div>
+					<div>товар</div>
+					<div>товар</div>
+				</div>
+			</div>
 		</>
 	)
 }

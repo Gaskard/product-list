@@ -28,6 +28,11 @@ const NewProductForm = ({form}) => {
 					<option value="">Выберите категорию</option>
 				</select>
 			</div>
+			
+			<div className="form__buttons">
+				<button className="form__buttons-cancel">Отмена</button>
+				<button className="form__buttons-add">Добавить</button>
+			</div>
 		</form>
 	) : null
 }
