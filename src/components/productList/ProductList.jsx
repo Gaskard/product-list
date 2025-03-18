@@ -1,29 +1,30 @@
 import './productList.scss'
+import NewProductForm from '../newProductForm/NewProductForm'
+import ProductItem from '../productItem/ProductItem'
+import {useState} from 'react'
 
 
-const ProductList = () => {
+const ProductList = ({onToggleForm, form}) => {
 	
+	const [products, setProducts] = useState([])
 	
+	const addProduct = (newProduct) => {
+		setProducts([...products, newProduct])
+	}
+	
+	const removeProduct = (id) => {
+		setProducts(products.filter(product => product.id !== id))
+	}
 	
 	return (
-		<>
-			<div className="product">
-				<h2 className="product__title-good">Хорошие товары</h2>
-				<div className="product__list">
-					<div>товар</div>
-					<div>товар</div>
-					<div>товар</div>
-				</div>
+		<div>
+			<NewProductForm onToggleForm={onToggleForm} form={form} onAddProduct={addProduct}/>
+			<div className="product__list">
+				{products.map(product => (
+					<ProductItem key={product.id} product={product} onRemove={removeProduct}/>
+				))}
 			</div>
-			<div className="product">
-				<h2 className="product__title-bad">Плохие товары</h2>
-				<div className="product__list">
-					<div>товар</div>
-					<div>товар</div>
-					<div>товар</div>
-				</div>
-			</div>
-		</>
+		</div>
 	)
 }
 
