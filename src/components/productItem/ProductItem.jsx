@@ -1,4 +1,4 @@
-
+import './productItem.scss'
 
 const ProductItem = ({product, onRemove}) => {
 	return (

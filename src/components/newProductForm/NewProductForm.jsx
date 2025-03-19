@@ -12,6 +12,8 @@ const NewProductForm = ({form, onAddProduct, onToggleForm}) => {
 	const addNewProduct = (e) => {
 		e.preventDefault()
 		
+		onToggleForm()
+		
 		if (!name.trim() || !type) return;
 		
 		const newProduct = {
