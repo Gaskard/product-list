@@ -8,6 +8,7 @@ const NewProductForm = ({form, onAddProduct, onToggleForm}) => {
 	const [img, setImg] = useState('')
 	const [description, setDescription] = useState('')
 	const [type, setType] = useState('')
+	const [files, setFiles] = useState([])
 	
 	const addNewProduct = (e) => {
 		e.preventDefault()
@@ -32,6 +33,13 @@ const NewProductForm = ({form, onAddProduct, onToggleForm}) => {
 		setType('')
 	}
 	
+	const handleChange = (e) => {
+		e.preventDefault()
+		if (e.target.files && e.target.files[0]) {
+			setFiles([...e.target.files])
+		} // Доделать загрузку фото
+	}
+	
 	
 	
 	return form ? (
@@ -49,12 +57,13 @@ const NewProductForm = ({form, onAddProduct, onToggleForm}) => {
 			
 			<div className="form__input">
 				<h3 className="form__input-header">URL изображения</h3>
+				
 				<input
-					type="text"
-					placeholder='Введите URL изображения (необязательно)'
+					type="file"
+					multiple={true}
 					className="form__input-value"
 					value={img}
-					onChange={e => setImg(e.target.value)}/>
+					onChange={handleChange}/>
 			</div>
 			
 			<div className="form__input">
